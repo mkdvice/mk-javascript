@@ -1,10 +1,10 @@
 function calcTime() {
     // create a reference to page's elements
-    var inHourBrazil = document.getElementById("inHourBrazil");
-    var outHourFrance = document.getElementById("outHourFrance");
+    let inHourBrazil = document.querySelector('#inHourBrazil');
+    let outHourFrance = document.querySelector("#outHourFrance");
 
     // take and convert field content inHourBrazil
-    var hourBrazil = Number(inHourBrazil.value);
+    let hourBrazil = Number(inHourBrazil.value);
 
     // if not fill or Not-a-Number
     if(inHourBrazil.value == '' || isNaN(hourBrazil)) {
@@ -13,7 +13,7 @@ function calcTime() {
         return;
     }
 
-    var hourFrance = hourBrazil + 5; // calc france hour
+    let hourFrance = hourBrazil + 5; // calc france hour
 
     // if pass 24 hours in France...
     if (hourFrance > 24) {
@@ -24,5 +24,5 @@ function calcTime() {
     outHourFrance.textContent = "Hora na França: " + hourFrance.toFixed(2);
 }
     // make a reference to btShow element e register event associate a function
-    var btShow = document.getElementById("btShow");
+    let btShow = document.getElementById("btShow");
     btShow.addEventListener("click", calcTime);
